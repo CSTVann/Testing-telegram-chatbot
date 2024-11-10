@@ -124,7 +124,9 @@ class CarepBot:
         await file.download_to_drive(file_path)
 
         await update.message.reply_text(f"Image saved successfully with ID: {file.file_id}")
-        await update.message.reply_text("Your image has been received and is being processed. Please wait...")
+        # await update.message.reply_text("Your image has been received and is being processed. Please wait...")
+        await update.message.reply_text("")
+
 
         try:
             with open(file_path, 'rb') as image_file:
@@ -140,7 +142,8 @@ class CarepBot:
                 if not image_id:
                     await update.message.reply_text("Error: No image ID received from the server.")
                     return
-                await update.message.reply_text(f"Your image has been successfully uploaded with ID: {image_id}. Processing...")
+                # await update.message.reply_text(f"Your image has been successfully uploaded with ID: {image_id}. Processing...")
+                await update.message.reply_text(f"Your image has been successfully")
 
                 result = await self.get_processing_results(image_id)
 
