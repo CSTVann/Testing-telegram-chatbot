@@ -19,7 +19,6 @@ class CarepBot:
     # Token: Final = os.getenv('TOKEN')
     # BOT_USERNAME: Final = os.getenv('BOT_USERNAME')
     # FLASK_API_URL = os.getenv('FLASK_API_URL')
-    WEBHOOK_URL = f"https://carep-testing.herokuapp.com/{self.Token}"
 
 
     async def set_webhook(self):
@@ -255,8 +254,6 @@ class CarepBot:
     def run(self):
         print('Starting bot...')
         print("Polling...")
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(self.set_webhook())
         self.app.run_polling(poll_interval=5)
 
 if __name__ == '__main__':
