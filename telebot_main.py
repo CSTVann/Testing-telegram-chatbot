@@ -10,9 +10,14 @@ import json
 load_dotenv()
 
 class CarepBot:
-    Token: Final = os.getenv('TOKEN')
-    BOT_USERNAME: Final = os.getenv('BOT_USERNAME')
-    FLASK_API_URL = os.getenv('FLASK_API_URL')
+
+    Token: Final = "8194868944:AAEERu71UzPPEjvh4pBHA3zrmDTn7F9_haM"
+    BOT_USERNAME: Final = "@careptestingbot"
+    FLASK_API_URL = "http://127.0.0.1:5000/upload"
+
+    # Token: Final = os.getenv('TOKEN')
+    # BOT_USERNAME: Final = os.getenv('BOT_USERNAME')
+    # FLASK_API_URL = os.getenv('FLASK_API_URL')
     def __init__(self):
         self.app = Application.builder().token(self.Token).build()
         self.setup_handlers()
